@@ -1,0 +1,28 @@
+main:
+  params: [event]
+  steps:
+    - init:
+        assign:
+          - bucket: "ss_carbon_fp-bucket"
+          - file: "rides.csv"
+          - dataset: "Carbon_tracker_EU"
+          - table: "ride_emissions"
+          - source_uri: "gs://ss_carbon_fp-bucket/rides.csv"  
+    - load_to_bigquery:
+        call: googleapis.bigquery.v2.jobs.insert
+        args:
+          projectId: diesel-freehold-461615-j3
+          body:
+            configuration:
+              load:
+                destinationTable:
+                  projectId: diesel-freehold-461615-j3
+                  datasetId: ${dataset}
+                  tableId: ${table}
+                sourceUris:
+                  - ${source_uri} 
+                skipLeadingRows: 1
+                autodetect: true
+                writeDisposition: WRITE_APPEND
+        result: loadJob
+
