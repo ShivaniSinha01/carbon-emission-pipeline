@@ -89,7 +89,7 @@ carbon-emissions-pipeline/
 │   └── Walkthrough_Video.mp4
 ├── dashboard/
 │   └── Emissions_Dashboard.pdf
-│	└── details.md  
+│   └── details.md
 ├── README.md
 ```
 
