@@ -86,6 +86,7 @@ carbon-emissions-pipeline/
 │   ├── Sinha_Shivani_92124778_Batch_Processing_Pipeline_Construction_Phase1.docx
 │   ├── Sinha_Shivani_92124778_Batch_Processing_Pipeline_Construction_Phase2.pdf
 │   └── architecture_diagram.png
+│   └── Walkthrough_Video.mp4
 ├── dashboard/
 │   └── Emissions_Dashboard.pdf
 │	└── details.md  
