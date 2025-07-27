@@ -1,0 +1,8 @@
+Select *,
+distance_km* CASE WHEN lower(vehicle_type)='petrol_car' THEN 192
+                  WHEN lower(vehicle_type)='diesel_car' THEN 171
+                  WHEN lower(vehicle_type)='electric_bike' THEN 21
+                  WHEN lower(vehicle_type)='bus' THEN 105
+                else 0 
+              end as co2_grams
+ from `diesel-freehold-461615-j3.Carbon_tracker_EU.ride_emissions` 
