@@ -49,7 +49,7 @@ A synthetic dataset was generated to simulate ride data. It includes the followi
 ## 📄 BigQuery Transformation Logic
 
 ```sql
--- emissions_with_co2.sql
+-- Ride_emissions_co2_V.sql
 SELECT *,
   distance_km * CASE
     WHEN vehicle_type = 'petrol_car' THEN 192
@@ -58,17 +58,16 @@ SELECT *,
     WHEN vehicle_type = 'bus' THEN 105
     ELSE 0
   END AS co2_grams
-FROM `project.dataset.ride_emissions`;
+FROM `diesel-freehold-461615-j3.Carbon_tracker_EU.ride_emissions`;
 ```
 
 ---
 
 ## 📎 Dashboard Highlights (Looker Studio)
 
-- Total CO₂ emissions (scorecard)
 - Emissions by vehicle type (pie chart)
 - Emissions by city (bar chart)
-- Emissions trend by month (chronologically sorted)
+- Emissions trend by month
 
 ---
 
@@ -85,6 +84,7 @@ carbon-emissions-pipeline/
 ├── docs/
 │   ├── Sinha_Shivani_92124778_Batch_Processing_Pipeline_Construction_Phase1.docx
 │   ├── Sinha_Shivani_92124778_Batch_Processing_Pipeline_Construction_Phase2.pdf
+│   ├── Sinha_Shivani_92124778_Batch_Processing_Pipeline_Construction_Phase3.pdf
 │   └── architecture_diagram.png
 │   └── Walkthrough_Video.mp4
 ├── dashboard/
